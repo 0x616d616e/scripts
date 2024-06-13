@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copyright (C) 2018 Akhil Narang
+# Copyright (C) 2018-19 Akhil Narang
 # SPDX-License-Identifier: GPL-3.0-only
 
 # Script with some aliases and exports
@@ -9,38 +9,13 @@ if [[ "$(command -v hub)" ]]; then
     alias git='hub'
 fi
 
-# SSH aliases
-alias rr='mosh akhil@ssh.resurrectionremix.com'
-alias aosip='mosh akhil@illusion.aosiprom.com'
-alias kronic='mosh kronic@packet.aosiprom.com'
-alias jenkins='mosh jenkins@packet.aosiprom.com'
-alias bot='mosh bot@bot.akhilnarang.me'
-alias downloads='mosh akhil@lab.dirtyrom.com'
-alias contabo='mosh akhil@olddroid.de'
-
 # Miscellaneous aliases
 alias setperf='echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias setsave='echo "powersave" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias path='echo ${PATH}'
-alias stopjack='jack-admin stop-server'
-
-# https://github.com/AdrianDC/android_development_shell_tools
-# Has some useful stuff :)
-ADCSCRIPT="${HOME}/android_development_shell_tools"
-if [[ -f "${ADCSCRIPT}/android_development_shell_tools.rc" ]]; then
-    source "${ADCSCRIPT}/android_development_shell_tools.rc"
-fi
 
 # Set default editor to nano
 export EDITOR="nano"
 
 # Set timezone
 export TZ="Asia/Kolkata"
-
-# Colors
-green='\e[0;32m'
-cyan='\e[0;36m'
-red='\e[0;31m'
-lightgray='\e[0;37m'
-
-
